@@ -59,7 +59,7 @@ def call_model_standard(prompt, content, model_name):
                 messages=messages,
                 temperature=0
             )    
-            return response.choices[0].message.content
+            return response.choices[0].message.content, ""
         except Exception as e:
             if "429" in str(e):  
                 print(f"超出速率限制，{retry_delay}秒后重试 (尝试 {attempt + 1}/{MAX_RETRIES})")
@@ -67,9 +67,9 @@ def call_model_standard(prompt, content, model_name):
                 retry_delay *= 2
             else:
                 print(f"错误: {str(e)}")
-                return f"错误: {str(e)}"
+                return f"错误: {str(e)}", ""
     
-    return "错误_超过最大重试次数"
+    return "错误_超过最大重试次数", ""
 
 def call_model_stream(prompt, content, model_name):
     messages = [
