@@ -9,6 +9,7 @@ import openai
 
 with open('/mnt/workspace/xintong/api_key.txt', 'r') as f:
     lines = f.readlines()
+    
 API_KEY = lines[0].strip()
 BASE_URL = lines[1].strip()
 openai.api_key = API_KEY
@@ -18,6 +19,7 @@ root = "/mnt/workspace/xintong/"
 USER_TEMPLATE = "输入：{sentence}"
 PROMPT_DIR = os.path.join(root, "lyx/Chinese_datasets_api/prompt")
 RESULTS_DIR = os.path.join(root, "lyx/results/Chinese_datasets_api")
+
 MAX_RETRIES = 5
 INITIAL_DELAY = 5
 REQUEST_INTERVAL = 1
