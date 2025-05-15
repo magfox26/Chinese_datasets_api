@@ -224,29 +224,15 @@ if __name__ == '__main__':
     parser.add_argument('--all', action='store_true', help='使用所有支持的模型')
     parser.add_argument('--dataset', type=str, choices=['toxic', 'test'], default='toxic',
                         help='选择处理的数据集：toxic (Toxic_data.json) 或 test (test.json)')
-    parser.add_argument('--model-type', type=str, choices=['qwen', 'deepseek', 'all'], default='all',
-                        help='选择模型类型：qwen, deepseek 或 all')
     args = parser.parse_args()
     
-    # 根据模型类型筛选
-    filtered_models = []
-    if args.model_type == 'qwen':
-        filtered_models = [m for m in ALL_MODELS if 'qwen' in m.lower()]
-    elif args.model_type == 'deepseek':
-        filtered_models = [m for m in ALL_MODELS if 'deepseek' in m.lower()]
-    else:  # 'all'
-        filtered_models = ALL_MODELS
-    
     if args.all:
-        models_to_use = filtered_models
+        models_to_use = ALL_MODELS
     else:
-        models_to_use = [m for m in args.models if m in filtered_models]
+        models_to_use = [m for m in args.models if m in ALL_MODELS]
         if not models_to_use:
-            print(f"警告: 指定的模型中没有符合类型 '{args.model_type}' 的模型，将使用默认模型")
-            if filtered_models:
-                models_to_use = [filtered_models[0]]
-            else:
-                models_to_use = ["qwen-max-2025-01-25"]
+            print(f"警告: 指定的模型没有在支持列表中，将使用默认模型")
+            models_to_use = ["qwen-max-2025-01-25"]
     
     print(f"将使用以下模型处理数据: {', '.join(models_to_use)}")
     print(f"选择的数据集: {args.dataset}")
