@@ -106,7 +106,7 @@ def process_data(model_names):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='使用指定模型处理有害文本并进行改写')
-    parser.add_argument('--models', type=str, nargs='+', default=["qwen-max-2025-01-25"], 
+    parser.add_argument('--models', type=str, nargs='+', default=["gpt-4o-2024-11-20"], 
                         help='使用的模型名称，可以指定多个模型，用空格分隔')
     parser.add_argument('--all', action='store_true', help='使用所有支持的模型')
     args = parser.parse_args()
