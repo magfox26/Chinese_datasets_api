@@ -33,8 +33,7 @@ DATA_FILES = {
 # 支持的模型列表及其调用方式
 MODELS = {
     # 普通调用方式
-    "standard": ["qwen-max-2025-01-25", "deepseek-v3", "gpt-4o-2024-11-20", "o1-2024-12-17", 
-                "gemini-2.5-flash-preview-04-17", "gemini-2.5-pro-preview-05-06"],
+    "standard": ["qwen-max-2025-01-25", "deepseek-v3"],
     # 流式调用方式 
     "stream": ["qwen3-235b-a22b"],
     # 推理调用方式 
