@@ -54,7 +54,7 @@ def call_model(prompt, content, model_name):
             )
             
             # 针对Gemini模型输出调试信息
-            if model_name in ["gemini-2.5-flash-preview-04-17", "gemini-2.5-pro-preview-05-06"]:
+            if attempt == 0 and model_name in ["gemini-2.5-flash-preview-04-17", "gemini-2.5-pro-preview-05-06"]:
                 print(f"\n[DEBUG - {model_name}] 原始响应结构:")
                 print(response)
             
