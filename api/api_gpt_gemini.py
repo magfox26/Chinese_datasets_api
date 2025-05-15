@@ -9,6 +9,7 @@ import openai
 
 with open('/mnt/workspace/xintong/api_key.txt', 'r') as f:
     lines = f.readlines()
+    
 API_KEY = lines[0].strip()
 BASE_URL = lines[1].strip()
 openai.api_key = API_KEY
@@ -19,6 +20,7 @@ USER_TEMPLATE = "输入：{sentence}"
 INPUT_FILE = os.path.join(root, "lyx/Chinese_datasets_api/data/Toxic_data.json")
 PROMPT_DIR = os.path.join(root, "lyx/Chinese_datasets_api/prompt")
 RESULTS_DIR = os.path.join(root, "lyx/results/Chinese_datasets_api")
+
 MAX_RETRIES = 5
 INITIAL_DELAY = 5
 REQUEST_INTERVAL = 1
@@ -71,7 +73,6 @@ def process_data(model_names):
         data = json.load(f)
     print(f"加载了 {len(data)} 条数据")
     
-    # 缓存所有数据集的提示
     dataset_prompts = {}
     datasets = set(item["dataset"] for item in data)
     for dataset in datasets:
@@ -79,7 +80,6 @@ def process_data(model_names):
         with open(prompt_path, 'r', encoding='utf-8') as f:
             dataset_prompts[dataset] = f.read().strip()
     
-    # 为每个模型处理数据
     for model_name in model_names:
         print(f"\n开始使用模型 {model_name} 处理数据")
         output_file = os.path.join(RESULTS_DIR, f"{model_name}-{today}.json")
@@ -111,7 +111,6 @@ if __name__ == '__main__':
     parser.add_argument('--all', action='store_true', help='使用所有支持的模型')
     args = parser.parse_args()
     
-    # 确定要使用的模型列表
     if args.all:
         models_to_use = AVAILABLE_MODELS
     else:
