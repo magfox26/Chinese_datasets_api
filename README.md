@@ -1,9 +1,9 @@
 # Chinese_datasets_api
 
 ## 目录
-1.api存放api代码
-[api_gpt-gemini.py](https://github.com/magfox26/Chinese_datasets_api/blob/main/api/api_gpt_gemini.py)包括：*gpt-4o-2024-11-20*，*o1-2024-12-17*，*gemini-2.5-flash-preview-04-17*，*gemini-2.5-pro-preview-05-06*
-[api_qwen-deepseek.py](https://github.com/magfox26/Chinese_datasets_api/blob/main/api/api_qwen_deepseek.py)包括：*qwen-max-2025-01-25*，*qwen3-235b-a22b*，*deepseek-v3*，*deepseek-r1*
+1.api存放api代码  
+[api_gpt-gemini.py](https://github.com/magfox26/Chinese_datasets_api/blob/main/api/api_gpt_gemini.py)包括的模型：*gpt-4o-2024-11-20*，*o1-2024-12-17*，*gemini-2.5-flash-preview-04-17*，*gemini-2.5-pro-preview-05-06*  
+[api_qwen-deepseek.py](https://github.com/magfox26/Chinese_datasets_api/blob/main/api/api_qwen_deepseek.py)包括的模型：*qwen-max-2025-01-25*，*qwen3-235b-a22b*，*deepseek-v3*，*deepseek-r1*  
 2.data存放数据  
 3.prompt存放各数据集的prompt   
 
