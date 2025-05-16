@@ -14,7 +14,7 @@
 比如只想在测试集运行*gemini-2.5-pro-preview-05-06*，运行方式：  
 `python api_gpt-gemini.py --models gemini-2.5-pro-preview-05-06 --dataset test`  
 在全集运行[api_gpt-gemini.py](https://github.com/magfox26/Chinese_datasets_api/blob/main/api/api_gpt_gemini.py)的所有模型，运行方式：   
-`python api_gpt-gemini.py --all --dataset test`  
+`python api_gpt-gemini.py --all --dataset toxic`  
 
 ## 日志
 ### 2025年5月16日  
