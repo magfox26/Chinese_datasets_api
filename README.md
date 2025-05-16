@@ -8,12 +8,12 @@
 3.prompt存放各数据集的prompt   
 
 ## 可用参数  
---all  运行全部数据集
---models 可以指定数据集，如果指定多个数据集中间用空格隔开
---dataset 可以选择全集toxic或测试集test  
+--all  运行全部数据集  
+--models 可以指定数据集，如果指定多个数据集中间用空格隔开  
+--dataset 可以选择全集toxic或测试集test    
 比如只想在测试集运行*gemini-2.5-pro-preview-05-06*，运行方式：  
-`python api_gpt-gemini.py --models gemini-2.5-pro-preview-05-06 --dataset test`
-在全集运行[api_gpt-gemini.py](https://github.com/magfox26/Chinese_datasets_api/blob/main/api/api_gpt_gemini.py)的所有模型，运行方式：  
+`python api_gpt-gemini.py --models gemini-2.5-pro-preview-05-06 --dataset test`  
+在全集运行[api_gpt-gemini.py](https://github.com/magfox26/Chinese_datasets_api/blob/main/api/api_gpt_gemini.py)的所有模型，运行方式：   
 `python api_gpt-gemini.py --all --dataset test`  
 
 ## 日志
