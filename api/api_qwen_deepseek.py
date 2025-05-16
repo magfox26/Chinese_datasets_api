@@ -56,8 +56,7 @@ def call_model_standard(prompt, content, model_name):
         try:
             response = openai.chat.completions.create(
                 model=model_name,
-                messages=messages,
-                temperature=0
+                messages=messages
             )    
             return response.choices[0].message.content, ""
         except Exception as e:
@@ -83,8 +82,7 @@ def call_model_stream(prompt, content, model_name):
             response = openai.chat.completions.create(
                 model=model_name,
                 messages=messages,
-                temperature=0,
-                stream=True,
+                stream=True
             )
             
             reasoning_content = ""  
@@ -128,10 +126,9 @@ def call_model_reasoning(prompt, content, model_name):
         try:
             response = openai.chat.completions.create(
                 model=model_name,
-                messages=messages,
-                temperature=0
+                messages=messages
             )
-            return response.choices[0].message.reasoning_content, response.choices[0].message.content
+            return response.choices[0].message.content, response.choices[0].message.reasoning_content
             
         except Exception as e:
             if "429" in str(e):
