@@ -50,14 +50,7 @@ def call_model(prompt, content, model_name):
             response = openai.chat.completions.create(
                 model=model_name,
                 messages=messages,
-                temperature=0
-            )
-            
-            # 针对Gemini模型输出调试信息
-            if attempt == 0 and model_name in ["gemini-2.5-flash-preview-04-17", "gemini-2.5-pro-preview-05-06"]:
-                print(f"\n[DEBUG - {model_name}] 原始响应结构:")
-                print(response)
-            
+            )            
             return response.choices[0].message.content
         except Exception as e:
             if "429" in str(e):  
