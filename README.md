@@ -18,7 +18,7 @@
 
 ## 日志
 ### 2025年5月16日  
-首先进行测试，用2个窗口分别运行 `python api_gpt_gemini.py --all --dataset test`和`python api_qwen-deepseek.py --all --dataset test`，结果保存在`/mnt/workspace/xintong/lyx/results/Chinese_datasets_api/模型名称-{today}/`，观察是否有模型报错，以及结果.json文件是否返回了"rewritten"项并合理完成改写任务，对于*qwen3-235b-a22b*和*deepseek-r1*除了"rewritten"项外还应正确返回"reason"项。
+首先进行测试，用2个窗口分别运行 `python api_gpt_gemini.py --all --dataset test`和`python api_qwen_deepseek.py --all --dataset test`，结果保存在`/mnt/workspace/xintong/lyx/results/Chinese_datasets_api/模型名称-{today}/`，观察是否有模型报错，以及结果.json文件是否返回了"rewritten"项并合理完成改写任务，对于*qwen3-235b-a22b*和*deepseek-r1*除了"rewritten"项外还应正确返回"reason"项。
 
 如果结果都正确：  
-重新运行 `python api_gpt_gemini.py --all --dataset toxic`和`python api_qwen-deepseek.py --all --dataset toxic`  
+重新运行 `python api_gpt_gemini.py --all --dataset toxic`和`python api_qwen_deepseek.py --all --dataset toxic`  
