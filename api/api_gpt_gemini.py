@@ -49,7 +49,7 @@ def call_model(prompt, content, model_name):
         try:
             response = openai.chat.completions.create(
                 model=model_name,
-                messages=messages,
+                messages=messages
             )            
             return response.choices[0].message.content
         except Exception as e:
