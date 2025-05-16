@@ -24,7 +24,7 @@ MAX_RETRIES = 5
 INITIAL_DELAY = 5
 REQUEST_INTERVAL = 1
 
-# 定义可用的数据集
+# 可用的数据集
 DATA_FILES = {
     "toxic": os.path.join(root, "lyx/Chinese_datasets_api/data/Toxic_data.json"),
     "test": os.path.join(root, "lyx/Chinese_datasets_api/data/test.json")
