@@ -13,10 +13,13 @@
 --dataset 可以选择全集toxic或测试集test    
 比如只想在测试集运行*gemini-2.5-pro-preview-05-06*，运行方式：  
 `python api_gpt_gemini.py --models gemini-2.5-pro-preview-05-06 --dataset test`  
-在全集运行[api_gpt_gemini.py](https://github.com/magfox26/Chinese_datasets_api/blob/main/api/api_gpt_gemini.py)的所有模型，运行方式：   
-`python api_gpt_gemini.py --all --dataset toxic`  
+在全集运行[api_gpt_gemini.py](https://github.com/magfox26/Chinese_datasets_api/blob/main/api/api_gpt_gemini.py)的所有模型，运行方式：  `python api_gpt_gemini.py --all --dataset toxic`  
 
-## 日志
+## 日志  
+### 2025年5月17日  
+[api_qwen_deepseek.py](https://github.com/magfox26/Chinese_datasets_api/blob/main/api/api_qwen_deepseek.py)第行增加了模型*qwq-32b*  
+运行`python api_qwen_deepseek.py --models qwq-32b --dataset toxic`
+
 ### 2025年5月16日  
 首先进行测试，用2个窗口分别运行 `python api_gpt_gemini.py --all --dataset test`和`python api_qwen_deepseek.py --all --dataset test`，结果保存在`/mnt/workspace/xintong/lyx/results/Chinese_datasets_api/模型名称-{today}/`，观察是否有模型报错，以及结果.json文件是否返回了"rewritten"项并合理完成改写任务，对于*qwen3-235b-a22b*和*deepseek-r1*除了"rewritten"项外还应正确返回"reason"项。
 
