@@ -35,7 +35,7 @@ MODELS = {
     # 普通调用方式
     "standard": ["qwen-max-2025-01-25", "deepseek-v3"],
     # 流式调用方式 
-    "stream": ["qwen3-235b-a22b"],
+    "stream": ["qwen3-235b-a22b","qwq-32b"],
     # 推理调用方式 
     "reasoning": ["deepseek-r1"]
 }
