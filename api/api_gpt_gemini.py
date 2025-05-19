@@ -50,8 +50,8 @@ def call_model(prompt, content, model_name):
             if model_name == "gemini-2.5-flash-preview-04-17":
                 response = openai.chat.completions.create(
                     model=model_name,
-                    messages=messages,
-                    reasoning_effort="none"
+                    reasoning_effort="none",
+                    messages=messages
                 )
             else:
                 response = openai.chat.completions.create(
