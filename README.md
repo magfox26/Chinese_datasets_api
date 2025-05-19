@@ -16,7 +16,11 @@
 在全集运行[api_gpt_gemini.py](https://github.com/magfox26/Chinese_datasets_api/blob/main/api/api_gpt_gemini.py)的所有模型，运行方式：  
 `python api_gpt_gemini.py --all --dataset toxic`  
 
-## 日志  
+## 日志   
+### 2025年5月19日  
+[api_gpt_gemini.py](https://github.com/magfox26/Chinese_datasets_api/blob/main/api/api_gpt_gemini.py)将*gemini-2.5-flash-preview-04-17*的思考功能关闭  
+运行`python api_gpt_gemini.py --models gemini-2.5-flash-preview-04-17 --dataset toxic`
+
 ### 2025年5月17日  
 [api_qwen_deepseek.py](https://github.com/magfox26/Chinese_datasets_api/blob/main/api/api_qwen_deepseek.py)第38行增加了模型*qwq-32b*  
 运行`python api_qwen_deepseek.py --models qwq-32b --dataset toxic`
