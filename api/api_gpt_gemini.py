@@ -47,10 +47,17 @@ def call_model(prompt, content, model_name):
     retry_delay = INITIAL_DELAY
     for attempt in range(MAX_RETRIES):
         try:
-            response = openai.chat.completions.create(
-                model=model_name,
-                messages=messages
-            )            
+            if model_name == "gemini-2.5-flash-preview-04-17":
+                response = openai.chat.completions.create(
+                    model=model_name,
+                    messages=messages,
+                    reasoning_effort="none"
+                )
+            else:
+                response = openai.chat.completions.create(
+                    model=model_name,
+                    messages=messages
+                )            
             return response.choices[0].message.content
         except Exception as e:
             if "429" in str(e):  
